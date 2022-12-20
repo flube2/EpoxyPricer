@@ -1,0 +1,94 @@
+///////////////////////////////////////////////////
+// 1. Setup Version Control (GitHub and GitBash) //
+///////////////////////////////////////////////////
+
+	********************************************************************************************************************
+	** If you want to get max knowledge and benefits you have to type these out, no copy/paste, trust me its worth it **
+	********************************************************************************************************************
+
+- Download, install, test GitBash (https://git-scm.com/download/win)
+- Generate SSH keys. Seeing as RSA is being deprecated, use EDCSA instead ("ssh-keygen -t ecdsa -b 521" via CMD)
+- Register SSH keys with GitHub (https://github.com/settings/keys)
+- Open folder in Windows Explorer, right-click, click "Open GitBash Here"
+- Tell git who you are by typing:
+	 git config --global user.email "lubekfrankjaz@gmail.com"
+	 git config --global user.name "Frank"
+- Create new folder on desktop, rename with project name, open gitbash and type "git init"
+- Upload repo to GitHub by typing:
+	"git status" - to verify status, this is BY FAAAAAAAR my most used command and usually use after ANY/EVERY other command as a sanity check
+	"git add [filename or * for all files]" - stage files
+	"git commit -m [insert comment here]" - Tell git to add your staged files to memory
+	"git remote add origin https://github.com/lubekfrankjaz/EpoxyPricer.git" - only ran once, tell git where you want your changes to go
+	"git branch -M main" - sets branch, can fork path later
+	"git push -u origin main" - push changes to my GitHub repo [aka save my changes]   // Note "master" is now "main" as somehow that's offensive and racist..... smh.
+	
+	At this point your GitBash can, is, has and will communicate with that GitHub repo via opening GitBash in current directory
+
+// Make changes as needed, but when you want to save progress type:
+	"git add *" adds all files in working directory, can exclude or select specific file by typing git add [filename] or git add * .[file extension]
+	"git commit -m "[message about what you changed, should be informative]""
+	"git push origin main"  - save your progress
+	
+// Note: Every push is registered and you can make directory look exactly like it did when you typed push command
+Remember how back in the day with PS1 you'd save every 5 mins so you save progress, like save the game state in case things went south so you don't start from beginning?
+This is same concept, you can change your files to look how they did whenever you pushed, so SAVE AFTER EVEN THE MOST MINOR CHANGES
+If you don't, trust me, truuuuust me, you WILL regret not doing so at some point.
+Like when I ran "rm -rf *.*" in wrong directory and over 100 hrs of work was gone in minutes, I was only able to recover because I saved after every change.
+
+
+/////////////
+// Purpose //
+/////////////
+
+
+I need a basic price calculator for the epoxy products created under the partnership agreement between Lubek Enterprises (LE) and James Baran.
+The manufacturing process uses various resources that must be taken into account when determining prices of the final products.
+As pricing the final products appropriately directly effects profits and more importantly, profit margins, consistency and accuracy are detrimental.
+This project is being carried out to elimainate manual calculations that could potentially be effected by human error.
+
+
+///////////////
+// Resources //
+///////////////
+
+
+The resources involved are: 2-part epoxy mixture, basic color effects (liquid), glow in the dark solution and advanced effects (powders). [I will add to this as I go]
+- The 2-part epoxy mixture is necessary as it's the base of each item. Without it there is no product.
+- The basic color effects are liquids that are mixed in with the base in different ways, but primarily act as the main overall color for each product.
+- The glow-in-the-dark solution is added to store and emit photons allowing the product to be seen in low-light environments.
+- The advanced effects are typically powders that are mixed with the base to create visually appealing effects. Gold sparkles, blue streaks, etc.
+
+
+////////////////////
+// Objects Needed //
+////////////////////
+
+
+Product {
+- Size (enum) - [Tiny, Small, Medium, Large, Huge]   // Factors into amount of epoxy base solution needed, general (batch quantities)
+- Weight - How much item weighs overall   // Factors into amount of epoxy base solution needed, accurate (individual)
+- Basic Effect Level (enum) - [Hardly Any [1], Little [2], Medium [3], Lot [4], Tons [5]]
+- Advanced Effect Level (enum) - [Hardly Any [1], Little [2], Medium [3], Lot [4], Tons [5]]
+- Glow Level (enum) - [Little [1], Medium [2], Lot [3]]
+- Extras (Map (Object, Price)) - Static cost add-on determined using component as a key and price as a value
+}
+
+
+////////////////
+// Standalone //
+////////////////
+
+
+- Compile Java source code to .jar (Java Archive File) to implement standalone functionality
+
+
+///////////
+// Links //
+///////////
+
+
+https://serengetitech.com/tech/introduction-to-git-and-types-of-version-control-systems/
+https://git-lfs.github.com/
+
+
+// Now that this project has been given somewhat of a framework I'll now start implementing it in Java via Eclipse IDE
