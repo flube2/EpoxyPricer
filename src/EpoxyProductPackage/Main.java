@@ -1,14 +1,16 @@
- 
+package EpoxyProductPackage; 
 
 
 public class Main {
 
+	
+	public static void main(String[] args) {
 	// Main programming logic goes here
-	public EpoxyProduct ep = new EpoxyProduct(2.0);
+	EpoxyProduct ep = new EpoxyProduct(2.0, SIZE.SMALL, BEL.NONE, AEL.NONE, GLOW.NONE);
+	ep.printEpoxyProductInfo();
+	return;
 	
-	
-	
-	
+	}
 	/*class EpoxyProduct {
 		
 	public double weight; // in fluid ounces (fl oz)

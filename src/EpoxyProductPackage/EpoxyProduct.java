@@ -1,3 +1,4 @@
+package EpoxyProductPackage;
 
 enum GLOW {
 	NONE, LITTLE, MEDIUM, LOTS;
@@ -22,6 +23,20 @@ public class EpoxyProduct {
 	public BEL basicEffect;
 	public AEL advancedEffect;
 	public GLOW g;
+	
+	public EpoxyProduct(double weight, SIZE s, BEL basicEffect, AEL advancedEffect, GLOW g) {
+		super();
+		Weight = weight;
+		this.s = s;
+		this.basicEffect = basicEffect;
+		this.advancedEffect = advancedEffect;
+		this.g = g;
+	}
+
+	public EpoxyProduct(double weight) {
+		super();
+		Weight = weight;
+	}
 
 
 	/*
@@ -33,24 +48,70 @@ public class EpoxyProduct {
 ****** - Extras (Map (Object, Price)) - Static cost add-on determined using component as a key and price as a value  //TODO
 	 */
 
-	public EpoxyProduct (double weight) { // constructor with just weight
+	/*public EpoxyProduct (double weight) { // constructor with just weight
 		Weight = weight;
 		s = SIZE.SMALL;
 		basicEffect = BEL.NONE;
 		advancedEffect = AEL.NONE;
 		g = GLOW.NONE;
-	}
+	}*/
 
 	public void printEpoxyProductInfo() {
 	System.out.println();	// format
 	System.out.println("********************");	// format	
-	System.out.println(Weight);	
-	System.out.println(s);	
-	System.out.println(basicEffect);
-	System.out.println(advancedEffect);
-	System.out.println(g);	
+	System.out.println(this.Weight);	
+	System.out.println(this.s);	
+	System.out.println(this.basicEffect);
+	System.out.println(this.advancedEffect);
+	System.out.println(this.g);	
 	System.out.println("********************");	// format	
 	System.out.println();	// format
+	}
+
+	@Override
+	public String toString() {
+		return "EpoxyProduct [Weight=" + Weight + ", s=" + s + ", basicEffect=" + basicEffect + ", advancedEffect="
+				+ advancedEffect + ", g=" + g + "]";
+	}
+
+	public double getWeight() {
+		return Weight;
+	}
+
+	public void setWeight(double weight) {
+		Weight = weight;
+	}
+
+	public SIZE getS() {
+		return s;
+	}
+
+	public void setS(SIZE s) {
+		this.s = s;
+	}
+
+	public BEL getBasicEffect() {
+		return basicEffect;
+	}
+
+	public void setBasicEffect(BEL basicEffect) {
+		this.basicEffect = basicEffect;
+	}
+
+	public AEL getAdvancedEffect() {
+		return advancedEffect;
+	}
+
+	public void setAdvancedEffect(AEL advancedEffect) {
+		this.advancedEffect = advancedEffect;
+	}
+
+	public GLOW getG() {
+		return g;
+	}
+
+	public void setG(GLOW g) {
+		this.g = g;
 	}
 	
 	
